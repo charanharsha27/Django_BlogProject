@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block home-active %}active{% endblock home-active %}
+
+
+{% block body %}
+
+
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'img1.jpg' %}" class="d-block w-100" alt="...">
+          </div>
+      </div>
+    </div>
+    <br>
+        <h1 style="text-align:center; color: greenyellow;">About Our Website</h1>
+        <div class="text-center">
+        <img src="{% static 'blog.jpg' %}" class="rounded" alt="...">
+    
+
+    <p style="text-align: center; font-style: oblique; font-family: cursive, sans-serif;" >Welcome to our blog website, your ultimate destination for insightful and engaging content. Here, we strive to bring you a diverse range of topics, from the latest trends in technology to the fascinating world of art and culture. Our team of passionate writers is committed to delivering thought-provoking articles that both inform and entertain. Whether you're seeking expert advice, seeking inspiration, or simply looking to expand your knowledge, we invite you to embark on this journey with us and explore the captivating stories that await.</p>
+
+    
+
+{% endblock body %}

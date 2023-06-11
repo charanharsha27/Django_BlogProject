@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block blog-active %}active{% endblock blog-active %}
+
+{% block body %}
+<h1 style="text-align:center;">Check Out Our Blogs.!</h1>
+
+<div class="container">
+    <div class="row">
+{% for blog in pageno %}
+
+
+    
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'blog.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{blog.title|safe}}</h5>
+                  <p class="card-text">Click The Below Button To Know <br>About This More</p>
+                  <a href="/blogposts/{{blog.slug}}" class="btn btn-primary">Read More</a>
+                </div>
+              </div>
+        </div>
+    
+
+
+{% endfor %}
+    </div>
+</div>
+
+{% if pageno.has_previous %}
+<a href="?page=1">&laquo; first</a>
+<a href="?page={{pageno.previous_page_number}}" >Previous</a>
+{% endif %}
+
+{% if pageno.has_next %}
+<a href="?page={{pageno.next_page_number}}">Next</a>
+{% endif %}
+
+<span class="current">
+  Page {{ pageno.number }} of {{ pageno.paginator.num_pages }}.
+</span>
+{% endblock body %}
