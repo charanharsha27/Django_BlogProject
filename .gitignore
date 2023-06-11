@@ -1,2 +1,6 @@
 myblogproject/
 db.sqlite3
+blogs/
+blog/
+static/
+templates/
